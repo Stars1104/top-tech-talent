@@ -1,4 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TopTech Talent Landing Page
+
+## How to Replace the Hero Image
+
+- The hero image on the landing page uses `public/hero.png` as a placeholder.
+- To use your own image, replace `public/hero.png` with your desired image (recommended size: 800x800px or larger, transparent PNG or high-res JPG).
+
+## Project Structure
+
+- `app/components/` — for reusable UI components (create as needed)
+- `app/sections/` — for page sections (create as needed)
+- `app/page.tsx` — main landing page
+- `public/` — static assets (SVGs, hero image, etc.)
+- `app/globals.css` — global styles, Tailwind CSS imports
+
+## Development
+
+- Run `npm install` to install dependencies.
+- Run `npm run dev` to start the development server.
+
+---
+
+This project uses Next.js 15 and Tailwind CSS 4.0.
 
 ## Getting Started
 
