@@ -7,6 +7,7 @@ import Image from "next/image";
 const Navbar = () => {
     const [showSearch, setShowSearch] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isSmallHeight, setIsSmallHeight] = useState(false);
     const searchInputRef = useRef<HTMLInputElement>(null);
     const searchButtonRef = useRef<HTMLButtonElement>(null);
     const searchBoxRef = useRef<HTMLDivElement>(null);
@@ -44,8 +45,21 @@ const Navbar = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    // Check scroll position and update background color
+    useEffect(() => {
+        function handleScroll() {
+            const scrollY = window.scrollY;
+            const shouldBeRed = scrollY > 100; // Change to red after scrolling 100px
+            setIsSmallHeight(shouldBeRed);
+        }
+
+        handleScroll(); // Check on mount
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <nav className="w-full flex justify-center fixed top-0 left-0 z-50 bg-transparent py-4 backdrop-blur supports-backdrop-blur:bg-white/95 ">
+        <nav className={`w-full flex justify-center fixed top-0 left-0 z-50 py-4 tranistion-all duration-300 ${isSmallHeight ? 'bg-pink-500' : 'bg-transparent backdrop-blur supports-backdrop-blur:bg-white/95'}`}>
             <div className="w-full max-w-[1600px] flex items-center justify-between px-4 md:px-8 h-20 md:h-28relative">
                 {/* Logo as Text */}
                 <Link href="/">
@@ -91,7 +105,7 @@ const Navbar = () => {
                 </button>
             </div>
             {/* Mobile Dropdown */}
-            <div className={`lg:hidden fixed top-24 left-0 w-full bg-[#1a1333] z-40 transition-all duration-300 ${mobileMenuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'} overflow-hidden shadow-lg border-b border-white`}>
+            <div className={`lg:hidden fixed top-24 left-0 w-full ${isSmallHeight ? 'bg-pink-500' : 'bg-[#1a1333]'} z-40 transition-all duration-300 ${mobileMenuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'} overflow-hidden shadow-lg`}>
                 <div className="flex flex-col gap-2 py-4 px-6 text-white text-base font-medium">
                     <div className="flex items-center gap-1 py-2 cursor-pointer">Find Jobs <ChevronDown size={18} /></div>
                     <div className="flex items-center gap-1 py-2 cursor-pointer">Hire Talent <ChevronDown size={18} /></div>
