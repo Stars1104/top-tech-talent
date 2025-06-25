@@ -1,12 +1,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaLinkedinIn, FaMapMarkerAlt } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const Footer = () => {
     return (
         <footer className="mt-24">
             {/* Bottom Section: Blue navigation/footer */}
-            <div className="bg-[#4747F3] text-white py-16">
+            <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+                className="bg-[#4747F3] text-white py-16"
+            >
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {/* Services Column */}
@@ -60,10 +66,15 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
 
             {/* Top Section: White background */}
-            <div className="bg-white text-black border border-[#4747F3] border-b-0">
+            <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+                className="bg-white text-black border border-[#4747F3] border-b-0"
+            >
                 <div className="container mx-auto px-4 py-8 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
                     {/* Left: Logo and Socials */}
                     <div className="flex flex-col items-start gap-4">
@@ -101,7 +112,7 @@ const Footer = () => {
                         </button>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </footer>
     );
 };

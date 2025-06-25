@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const testimonials = [
     {
@@ -11,23 +12,55 @@ const testimonials = [
     },
 ];
 
+const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+};
+
 const Explore = () => {
     return (
         <div className="w-full min-h-[800px] flex flex-col relative md:justify-center items-center justify-start px-2 sm:px-4 py-8">
             <div className="w-full max-w-[1600px] flex flex-col gap-8 justify-center items-center">
-                <h2 className="text-pink-500 text-4xl md:text-5xl font-light text-center mb-12 mt-4">Explore testimonials</h2>
+                <motion.h2
+                    className="text-pink-500 text-4xl md:text-5xl font-light text-center mb-12 mt-4"
+                    initial={{ opacity: 0, y: -30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, type: "spring", stiffness: 60 }}
+                >
+                    Explore testimonials
+                </motion.h2>
                 <div className="flex flex-col md:flex-row gap-8 w-full justify-center items-center mb-10">
                     {testimonials.map((t, i) => (
-                        <div
+                        <motion.div
                             key={i}
                             className="bg-[#d3d9fd] rounded-[100px] px-8 py-4 flex-1 min-w-[280px] max-w-3xl flex items-center shadow-sm"
                             style={{ minHeight: 220 }}
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: i * 0.2, type: "spring", stiffness: 60 }}
+                            whileHover={{ scale: 1.04, boxShadow: "0 8px 32px rgba(211,217,253,0.4)" }}
                         >
                             <div className="flex flex-col gap-2">
-                                <p className="text-gray-800 text-base md:text-xl mb-2">"{t.text}"</p>
-                                <p className="text-gray-700 text-sm md:text-lg mt-2">- {t.author}</p>
+                                <motion.p
+                                    className="text-gray-800 text-base md:text-xl mb-2"
+                                    variants={textVariants}
+                                    initial="hidden"
+                                    animate="visible"
+                                    transition={{ delay: 0.2 + i * 0.2, duration: 0.6, type: "spring", stiffness: 60 }}
+                                >
+                                    "{t.text}"
+                                </motion.p>
+                                <motion.p
+                                    className="text-gray-700 text-sm md:text-lg mt-2"
+                                    variants={textVariants}
+                                    initial="hidden"
+                                    animate="visible"
+                                    transition={{ delay: 0.3 + i * 0.2, duration: 0.6, type: "spring", stiffness: 60 }}
+                                >
+                                    - {t.author}
+                                </motion.p>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
                 <div className="flex items-center justify-center gap-4 mt-2">
