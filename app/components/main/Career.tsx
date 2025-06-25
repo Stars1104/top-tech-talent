@@ -8,7 +8,7 @@ const Career = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="w-full lg:h-[800px] h-[1000px] lg:px-0 px-4 py-8 lg:py-16 mx-auto lg:mt-0 mt-16 flex flex-col items-center relative z-50"
+            className="w-full lg:h-[800px] h-[1000px] lg:px-0 px-4 py-8 lg:py-16 mx-auto lg:mt-0 mt-16 flex flex-col items-center relative z-10"
             style={{ backgroundImage: "url('/images/Career.png')" }}
         >
             <div className="w-full max-w-[1600px] h-full relative flex lg:flex-row justify-center flex-col-reverse lg:gap-0 gap-12">
@@ -18,7 +18,7 @@ const Career = () => {
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                    <Image src="/images/mtc-banner.png" alt="MTC-Banner" width={500} height={500} className="z-50" />
+                    <Image src="/images/mtc-banner.png" alt="MTC-Banner" width={500} height={500} />
                     {/* <Image src="/images/career-effect.png" alt="Career-Effect" width={440} height={240} className="absolute top-16 right-16" /> */}
                 </motion.div>
                 <motion.div
