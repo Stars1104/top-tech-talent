@@ -27,7 +27,7 @@ const Career = () => {
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    <h2 className="text-4xl sm:text-4xl lg:text-6xl font-thin lg:mb-20 mb-6 mt-4 text-pink-500 lg:px-0 px-4 lg:text-start text-center">Make the carrer move you want</h2>
+                    <h2 className="text-4xl sm:text-4xl lg:text-6xl font-thin lg:mb-20 mb-6 mt-4 text-pink-500 lg:px-0 px-4 lg:text-start text-center">Make the career move you want</h2>
                     <motion.div
                         className="w-full flex flex-col lg:gap-8 gap-4"
                         initial="hidden"

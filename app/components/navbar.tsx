@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ChevronDown, Search, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
     const [showSearch, setShowSearch] = useState(false);
@@ -11,6 +12,7 @@ const Navbar = () => {
     const searchInputRef = useRef<HTMLInputElement>(null);
     const searchButtonRef = useRef<HTMLButtonElement>(null);
     const searchBoxRef = useRef<HTMLDivElement>(null);
+    const route = useRouter();
 
     // Focus the input when shown
     useEffect(() => {
@@ -58,19 +60,31 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const pageRouter = (router: string) => {
+        if (router === "find-jobs") {
+
+        } else if (router === "hiring-talent") {
+            route.push('/hiringpage');
+        } else if (router === "explore-consulting-solutions") {
+
+        } else if (router === "discover-insights") {
+
+        }
+    }
+
     return (
         <nav className={`w-full flex justify-center fixed top-0 left-0 z-50 py-4 tranistion-all duration-300 ${isSmallHeight ? 'bg-pink-500' : 'bg-transparent backdrop-blur supports-backdrop-blur:bg-white/95'}`}>
-            <div className="w-full max-w-[1600px] flex items-center justify-between px-4 md:px-8 h-20 md:h-28relative">
+            <div className="w-full max-w-[1600px] flex items-center justify-between px-4 md:px-8 h-14 md:h-28relative">
                 {/* Logo as Text */}
                 <Link href="/">
-                    <Image src="/Logo.png" alt="Logo" width="90" height="50" className="md:w-[100px] w-[80px] cursor-pointer" />
+                    <Image src="/Logo.png" alt="Logo" width="70" height="30" className="md:w-[85px] w-[80px] cursor-pointer" />
                 </Link>
                 {/* Desktop Menu Items */}
                 <div className="hidden lg:flex gap-8 items-center text-white font-medium">
-                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-[#4747F3] transition-all duration-300">Find Jobs <ChevronDown size={20} /></div>
-                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-[#4747F3] transition-all duration-300">Hire Talent <ChevronDown size={20} /></div>
-                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-[#4747F3] transition-all duration-300">Explore Consulting Solutions <ChevronDown size={20} /></div>
-                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-[#4747F3] transition-all duration-300">Discover Insights <ChevronDown size={20} /></div>
+                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-[#4747F3] transition-all duration-300" onClick={() => pageRouter("find-jobs")}>Find Jobs <ChevronDown size={20} /></div>
+                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-[#4747F3] transition-all duration-300" onClick={() => pageRouter("hiring-talent")}>Hire Talent <ChevronDown size={20} /></div>
+                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-[#4747F3] transition-all duration-300" onClick={() => pageRouter("explore-consulting-solutions")}>Explore Consulting Solutions <ChevronDown size={20} /></div>
+                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-[#4747F3] transition-all duration-300" onClick={() => pageRouter("discover-insights")}>Discover Insights <ChevronDown size={20} /></div>
                 </div>
                 {/* Desktop Right Side: Search & Sign in */}
                 <div className="hidden lg:flex items-center gap-4 relative">
@@ -108,7 +122,7 @@ const Navbar = () => {
             <div className={`lg:hidden fixed top-24 left-0 w-full ${isSmallHeight ? 'bg-pink-500' : 'bg-[#1a1333]'} z-40 transition-all duration-300 ${mobileMenuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'} overflow-hidden shadow-lg`}>
                 <div className="flex flex-col gap-2 py-4 px-6 text-white text-base font-medium">
                     <div className="flex items-center gap-1 py-2 cursor-pointer">Find Jobs <ChevronDown size={18} /></div>
-                    <div className="flex items-center gap-1 py-2 cursor-pointer">Hire Talent <ChevronDown size={18} /></div>
+                    <div className="flex items-center gap-1 py-2 cursor-pointer" onClick={() => pageRouter("hiring-talent")}>Hire Talent <ChevronDown size={18} /></div>
                     <div className="flex items-center gap-1 py-2 cursor-pointer">Explore Consulting Solutions <ChevronDown size={18} /></div>
                     <div className="flex items-center gap-1 py-2 cursor-pointer">Discover Insights <ChevronDown size={18} /></div>
                     <div className="flex items-center gap-2 py-2">
