@@ -5,7 +5,6 @@ const HRSection = () => {
         <section className="w-full min-h-[1200px] md:py-16 mx-auto md:mt-0 mt-16 h-full flex flex-col items-center relative z-10">
             <div className="w-full max-w-[1600px] h-full relative">
                 <h2 className="text-[27px] sm:text-4xl md:text-5xl font-thin text-center md:mb-12 mb-6 mt-4 text-pink-500 md:px-0 px-4">Hiring trends and insights</h2>
-                {/* Cards */}
                 <div className="w-full flex justify-center items-center gap-8 md:gap-6 lg:gap-12 xl:gap-24 mt-32 lg:flex-nowrap flex-wrap md:px-0 px-4">
                     {/* Card 1 */}
                     <div className="flex flex-col items-center md:w-1/4 h-[500px]">

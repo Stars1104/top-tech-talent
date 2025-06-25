@@ -15,7 +15,7 @@ const Hero = () => {
                         <button className="bg-white text-blue-700 font-semibold px-8 sm:px-14 py-4 sm:py-8 cursor-pointer rounded-full shadow hover:bg-blue-100 transition-all text-lg sm:text-2xl w-full sm:w-auto">
                             Find a job
                         </button>
-                        <button className="border-2 border-blue-400 text-white font-semibold cursor-pointer px-8 sm:px-14 py-4 sm:py-8 rounded-full hover:bg-blue-400 hover:text-white transition-all text-lg sm:text-2xl w-full sm:w-auto">
+                        <button className="border-2 border-[#4747F3] text-white font-semibold cursor-pointer px-8 sm:px-14 py-4 sm:py-8 rounded-full hover:bg-[#4747F3] hover:text-white transition-all text-lg sm:text-2xl w-full sm:w-auto">
                             Find Talent
                         </button>
                     </div>

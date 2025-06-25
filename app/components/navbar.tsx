@@ -67,10 +67,10 @@ const Navbar = () => {
                 </Link>
                 {/* Desktop Menu Items */}
                 <div className="hidden lg:flex gap-8 items-center text-white font-medium">
-                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-blue-400 transition-all duration-300">Find Jobs <ChevronDown size={20} /></div>
-                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-blue-400 transition-all duration-300">Hire Talent <ChevronDown size={20} /></div>
-                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-blue-400 transition-all duration-300">Explore Consulting Solutions <ChevronDown size={20} /></div>
-                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-blue-400 transition-all duration-300">Discover Insights <ChevronDown size={20} /></div>
+                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-[#4747F3] transition-all duration-300">Find Jobs <ChevronDown size={20} /></div>
+                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-[#4747F3] transition-all duration-300">Hire Talent <ChevronDown size={20} /></div>
+                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-[#4747F3] transition-all duration-300">Explore Consulting Solutions <ChevronDown size={20} /></div>
+                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-[#4747F3] transition-all duration-300">Discover Insights <ChevronDown size={20} /></div>
                 </div>
                 {/* Desktop Right Side: Search & Sign in */}
                 <div className="hidden lg:flex items-center gap-4 relative">
@@ -92,10 +92,10 @@ const Navbar = () => {
                             ref={searchInputRef}
                             type="text"
                             placeholder="Search..."
-                            className="w-48 md:w-64 px-4 py-2 rounded-full border border-blue-400 bg-white text-black focus:outline-none transition-all duration-300 shadow-lg"
+                            className="w-48 md:w-64 px-4 py-2 rounded-full border border-[#4747F3] bg-white text-black focus:outline-none transition-all duration-300 shadow-lg"
                         />
                     </div>
-                    <Link href="#" className="px-6 py-2 rounded-full border border-blue-400 text-white bg-transparent hover:bg-blue-400 hover:text-white transition-all duration-300 text-sm md:text-base">
+                    <Link href="#" className="px-6 py-2 rounded-full border border-[#4747F3] text-white bg-transparent hover:bg-[#4747F3] hover:text-white transition-all duration-300 text-sm md:text-base">
                         Sign in
                     </Link>
                 </div>
@@ -116,10 +116,10 @@ const Navbar = () => {
                         <input
                             type="text"
                             placeholder="Search..."
-                            className="w-full px-3 py-2 rounded-full border border-blue-400 bg-white text-black focus:outline-none transition-all duration-300 shadow"
+                            className="w-full px-3 py-2 rounded-full border border-[#4747F3] bg-white text-black focus:outline-none transition-all duration-300 shadow"
                         />
                     </div>
-                    <Link href="#" className="w-full text-center px-4 py-2 rounded-full border border-blue-400 text-white bg-transparent hover:bg-blue-400 hover:text-white transition-colors text-base mt-2">
+                    <Link href="#" className="w-full text-center px-4 py-2 rounded-full border border-[#4747F3] text-white bg-transparent hover:bg-[#4747F3] hover:text-white transition-colors text-base mt-2">
                         Sign in
                     </Link>
                 </div>
