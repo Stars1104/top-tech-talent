@@ -51,7 +51,7 @@ const ConsultingExpertise = () => {
                 >
                     <div className="overflow-hidden rounded-[40px] shadow-lg max-w-md w-full flex items-center justify-center">
                         <Image
-                            src="/images/mtc-banner.png"
+                            src="/images/expertise.png"
                             alt="Consulting expertise"
                             width={420}
                             height={340}

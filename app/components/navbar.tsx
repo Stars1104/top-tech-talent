@@ -66,13 +66,13 @@ const Navbar = () => {
         } else if (route === "hiring-talent") {
             router.push('/hiring');
         } else if (route === "explore-consulting-solutions") {
-
+            router.push('/consulting');
         } else if (route === "discover-insights") {
         }
     }
 
     return (
-        <nav className={`w-full flex justify-center fixed top-0 left-0 z-50 py-4 tranistion-all duration-300 ${isSmallHeight ? 'bg-pink-500' : 'bg-transparent backdrop-blur supports-backdrop-blur:bg-white/95'}`}>
+        <nav className={`w-full flex justify-center fixed top-0 left-0 z-50 py-4 tranistion-all duration-300 ${isSmallHeight ? 'bg-[#3758F9]' : 'bg-transparent backdrop-blur supports-backdrop-blur:bg-white/95'}`}>
             <div className="w-full max-w-[1600px] flex items-center justify-between px-4 md:px-8 h-14 md:h-28relative">
                 {/* Logo as Text */}
                 <Link href="/">
@@ -80,10 +80,10 @@ const Navbar = () => {
                 </Link>
                 {/* Desktop Menu Items */}
                 <div className="hidden lg:flex gap-8 items-center text-white font-medium">
-                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-[#4747F3] transition-all duration-300" onClick={() => pageRouter("find-jobs")}>Find Jobs <ChevronDown size={20} /></div>
-                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-[#4747F3] transition-all duration-300" onClick={() => pageRouter("hiring-talent")}>Hire Talent <ChevronDown size={20} /></div>
-                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-[#4747F3] transition-all duration-300" onClick={() => pageRouter("explore-consulting-solutions")}>Explore Consulting Solutions <ChevronDown size={20} /></div>
-                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-[#4747F3] transition-all duration-300" onClick={() => pageRouter("discover-insights")}>Discover Insights <ChevronDown size={20} /></div>
+                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-pink-500 transition-all duration-300" onClick={() => pageRouter("find-jobs")}>Find Jobs <ChevronDown size={20} /></div>
+                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-pink-500 transition-all duration-300" onClick={() => pageRouter("hiring-talent")}>Hire Talent <ChevronDown size={20} /></div>
+                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-pink-500 transition-all duration-300" onClick={() => pageRouter("explore-consulting-solutions")}>Explore Consulting Solutions <ChevronDown size={20} /></div>
+                    <div className="flex items-center gap-1 cursor-pointer text-[16px] hover:text-pink-500 transition-all duration-300" onClick={() => pageRouter("discover-insights")}>Discover Insights <ChevronDown size={20} /></div>
                 </div>
                 {/* Desktop Right Side: Search & Sign in */}
                 <div className="hidden lg:flex items-center gap-4 relative">
