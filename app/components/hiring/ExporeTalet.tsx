@@ -28,16 +28,21 @@ const ExporeTalent = () => {
             <motion.h2
                 className="text-pink-500 text-4xl md:text-5xl font-light text-center mb-20 mt-4"
                 initial={{ opacity: 0, y: -30 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
                 transition={{ duration: 0.8, type: "spring", stiffness: 60 }}
             >
                 Explore our talent solutions
             </motion.h2>
             <div className="w-full max-w-7xl flex flex-col md:flex-row justify-center items-stretch gap-12 px-4">
                 {solutions.map((sol, i) => (
-                    <div
+                    <motion.div
                         key={sol.title}
                         className="flex-1 flex flex-col items-start md:items-center text-left md:text-center"
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false, amount: 0.3 }}
+                        transition={{ duration: 0.7, delay: i * 0.2, type: "spring", stiffness: 60 }}
                     >
                         <h3 className="text-blue-700 text-xl md:text-2xl font-bold mb-4">
                             {sol.title}
@@ -52,7 +57,7 @@ const ExporeTalent = () => {
                             Learn more
                             <ArrowRight className="w-5 h-5 text-[#00a2d4] group-hover:translate-x-1 transition-transform" />
                         </a>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </section>

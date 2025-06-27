@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const testimonials = [
     {
@@ -18,13 +18,19 @@ const textVariants = {
 };
 
 const Explore = () => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-100px" });
+
     return (
-        <div className="w-full min-h-[800px] flex flex-col relative md:justify-center items-center justify-start px-2 sm:px-4 py-8">
+        <div
+            ref={ref}
+            className="w-full min-h-[800px] flex flex-col relative md:justify-center items-center justify-start px-2 sm:px-4 py-8"
+        >
             <div className="w-full max-w-[1600px] flex flex-col gap-8 justify-center items-center">
                 <motion.h2
                     className="text-pink-500 text-4xl md:text-5xl font-light text-center mb-12 mt-4"
                     initial={{ opacity: 0, y: -30 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
                     transition={{ duration: 0.8, type: "spring", stiffness: 60 }}
                 >
                     Explore testimonials
@@ -36,7 +42,7 @@ const Explore = () => {
                             className="bg-[#d3d9fd] rounded-[100px] px-8 py-4 flex-1 min-w-[280px] max-w-3xl flex items-center shadow-sm"
                             style={{ minHeight: 220 }}
                             initial={{ opacity: 0, y: 40 }}
-                            animate={{ opacity: 1, y: 0 }}
+                            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
                             transition={{ duration: 0.6, delay: i * 0.2, type: "spring", stiffness: 60 }}
                             whileHover={{ scale: 1.04, boxShadow: "0 8px 32px rgba(211,217,253,0.4)" }}
                         >
@@ -45,7 +51,7 @@ const Explore = () => {
                                     className="text-gray-800 text-base md:text-xl mb-2"
                                     variants={textVariants}
                                     initial="hidden"
-                                    animate="visible"
+                                    animate={isInView ? "visible" : "hidden"}
                                     transition={{ delay: 0.2 + i * 0.2, duration: 0.6, type: "spring", stiffness: 60 }}
                                 >
                                     "{t.text}"
@@ -54,7 +60,7 @@ const Explore = () => {
                                     className="text-gray-700 text-sm md:text-lg mt-2"
                                     variants={textVariants}
                                     initial="hidden"
-                                    animate="visible"
+                                    animate={isInView ? "visible" : "hidden"}
                                     transition={{ delay: 0.3 + i * 0.2, duration: 0.6, type: "spring", stiffness: 60 }}
                                 >
                                     - {t.author}

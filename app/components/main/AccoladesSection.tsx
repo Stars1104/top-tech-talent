@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 
 const accolades = [
@@ -19,17 +19,20 @@ const accolades = [
 ];
 
 export default function AccoladesSection() {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: '-100px' });
     return (
         <motion.section
+            ref={ref}
             initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="w-full flex flex-col bg-no-repeat bg-[95%_center] lg:bg-center bg-cover relative md:justify-start items-center justify-start px-2 sm:px-4"
         >
             <div className='w-full max-w-[1400px] flex flex-col gap-4 justify-center items-center'>
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.2, duration: 0.7, ease: 'easeOut' }}
                     className="text-[2.5rem] md:text-[3rem] font-light text-[#F23CA4] mb-12 text-center"
                 >
@@ -42,7 +45,7 @@ export default function AccoladesSection() {
                             key={i}
                             className='relative md:w-[33%] w-full flex justify-center items-center'
                             initial={{ opacity: 0, y: 40 }}
-                            animate={{ opacity: 1, y: 0 }}
+                            animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ delay: 0.3 + i * 0.2, duration: 0.7, ease: 'easeOut' }}
                         >
                             <div className='w-[60%] flex flex-col text-xl h-64 justify-center gap-4'>

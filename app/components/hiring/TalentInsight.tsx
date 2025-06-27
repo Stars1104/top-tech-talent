@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion, easeOut } from "framer-motion";
 
 const insights = [
     {
@@ -70,6 +71,16 @@ const insights = [
     },
 ];
 
+const columnVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: easeOut } },
+};
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeOut } },
+};
+
 const TalentInsight = () => {
     return (
         <section className="w-full flex flex-col items-center justify-center py-16 bg-white">
@@ -78,95 +89,158 @@ const TalentInsight = () => {
             </h2>
             <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-2 md:px-0 mb-12">
                 {/* First column */}
-                <div className="flex flex-col gap-6">
-                    <div className="bg-white rounded-3xl shadow-md p-4 flex flex-col h-full">
-                        {insights[0].image && (
-                            <Image src={insights[0].image} alt={insights[0].title} width={320} height={180} className="rounded-2xl object-cover mb-4" />
-                        )}
-                        <h3 className="text-black text-base font-semibold mb-2">{insights[0].title}</h3>
-                        <p className="text-gray-600 text-sm">{insights[0].description}</p>
-                    </div>
-                    <div className="bg-white rounded-3xl shadow-md p-4 flex flex-col h-full">
-                        {insights[4].image && (
-                            <Image src={insights[4].image} alt={insights[4].title} width={320} height={180} className="rounded-2xl object-cover mb-4" />
-                        )}
-                        <h3 className="text-black text-base font-semibold mb-2">{insights[4].title}</h3>
-                        <p className="text-gray-600 text-sm">{insights[4].description}</p>
-                    </div>
-                    <div className="bg-white rounded-3xl shadow-md p-4 flex flex-col h-full">
-                        {insights[8].image && (
-                            <Image src={insights[8].image} alt={insights[8].title} width={320} height={180} className="rounded-2xl object-cover mb-4" />
-                        )}
-                        <h3 className="text-black text-base font-semibold mb-2">{insights[8].title}</h3>
-                        <p className="text-gray-600 text-sm">{insights[8].description}</p>
-                    </div>
-                </div>
+                <motion.div
+                    className="flex flex-col gap-6"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.3 }}
+                    variants={columnVariants}
+                >
+                    {[0, 4, 8].map((idx, i) => (
+                        <motion.div
+                            key={idx}
+                            className="bg-white rounded-3xl shadow-md p-4 flex flex-col h-full"
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: false, amount: 0.3 }}
+                            variants={cardVariants}
+                            transition={{ delay: i * 0.15, duration: 0.6, ease: easeOut }}
+                        >
+                            {insights[idx].image && (
+                                <Image src={insights[idx].image} alt={insights[idx].title} width={320} height={180} className="rounded-2xl object-cover mb-4" />
+                            )}
+                            <h3 className="text-black text-base font-semibold mb-2">{insights[idx].title}</h3>
+                            <p className="text-gray-600 text-sm">{insights[idx].description}</p>
+                        </motion.div>
+                    ))}
+                </motion.div>
                 {/* Second column */}
-                <div className="flex flex-col gap-6">
-                    <div className="bg-[#ff5b6a] text-white rounded-3xl shadow-md p-8 flex flex-col items-center justify-center h-full min-h-[180px]">
+                <motion.div
+                    className="flex flex-col gap-6"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.3 }}
+                    variants={columnVariants}
+                >
+                    <motion.div
+                        className="bg-[#ff5b6a] text-white rounded-3xl shadow-md p-8 flex flex-col items-center justify-center h-full min-h-[180px]"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false, amount: 0.3 }}
+                        variants={cardVariants}
+                        transition={{ delay: 0 * 0.15, duration: 0.6, ease: easeOut }}
+                    >
                         <span className="uppercase text-xs font-bold mb-2">Featured</span>
                         <h3 className="text-xl font-semibold text-center">{insights[1].title}</h3>
-                    </div>
-                    <div className="bg-[#ff5b6a] text-white rounded-3xl shadow-md p-8 flex flex-col items-center justify-center h-full min-h-[180px]">
+                    </motion.div>
+                    <motion.div
+                        className="bg-[#ff5b6a] text-white rounded-3xl shadow-md p-8 flex flex-col items-center justify-center h-full min-h-[180px]"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false, amount: 0.3 }}
+                        variants={cardVariants}
+                        transition={{ delay: 1 * 0.15, duration: 0.6, ease: easeOut }}
+                    >
                         <span className="uppercase text-xs font-bold mb-2">Tag Results</span>
                         <h3 className="text-xl font-semibold text-center">{insights[5].title}</h3>
                         <span className="text-sm mt-2">{insights[5].posts} posts</span>
-                    </div>
-                    <div className="bg-white rounded-3xl shadow-md p-4 flex flex-col h-full">
+                    </motion.div>
+                    <motion.div
+                        className="bg-white rounded-3xl shadow-md p-4 flex flex-col h-full"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false, amount: 0.3 }}
+                        variants={cardVariants}
+                        transition={{ delay: 2 * 0.15, duration: 0.6, ease: easeOut }}
+                    >
                         {insights[9].image && (
                             <Image src={insights[9].image} alt={insights[9].title} width={320} height={180} className="rounded-2xl object-cover mb-4" />
                         )}
                         <h3 className="text-black text-base font-semibold mb-2">{insights[9].title}</h3>
                         <p className="text-gray-600 text-sm">{insights[9].description}</p>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
                 {/* Third column */}
-                <div className="flex flex-col gap-6">
-                    <div className="bg-white rounded-3xl shadow-md p-4 flex flex-col h-full">
-                        {insights[2].image && (
-                            <Image src={insights[2].image} alt={insights[2].title} width={320} height={180} className="rounded-2xl object-cover mb-4" />
-                        )}
-                        <h3 className="text-black text-base font-semibold mb-2">{insights[2].title}</h3>
-                        <p className="text-gray-600 text-sm">{insights[2].description}</p>
-                    </div>
-                    <div className="bg-white rounded-3xl shadow-md p-4 flex flex-col h-full">
-                        {insights[6].image && (
-                            <Image src={insights[6].image} alt={insights[6].title} width={320} height={180} className="rounded-2xl object-cover mb-4" />
-                        )}
-                        <h3 className="text-black text-base font-semibold mb-2">{insights[6].title}</h3>
-                        <p className="text-gray-600 text-sm">{insights[6].description}</p>
-                    </div>
-                    <div className="bg-white rounded-3xl shadow-md p-4 flex flex-col h-full">
-                        {insights[10].image && (
-                            <Image src={insights[10].image} alt={insights[10].title} width={320} height={180} className="rounded-2xl object-cover mb-4" />
-                        )}
-                        <h3 className="text-black text-base font-semibold mb-2">{insights[10].title}</h3>
-                        <p className="text-gray-600 text-sm">{insights[10].description}</p>
-                    </div>
-                </div>
+                <motion.div
+                    className="flex flex-col gap-6"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.3 }}
+                    variants={columnVariants}
+                >
+                    {[2, 6, 10].map((idx, i) => (
+                        <motion.div
+                            key={idx}
+                            className="bg-white rounded-3xl shadow-md p-4 flex flex-col h-full"
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: false, amount: 0.3 }}
+                            variants={cardVariants}
+                            transition={{ delay: i * 0.15, duration: 0.6, ease: easeOut }}
+                        >
+                            {insights[idx].image && (
+                                <Image src={insights[idx].image} alt={insights[idx].title} width={320} height={180} className="rounded-2xl object-cover mb-4" />
+                            )}
+                            <h3 className="text-black text-base font-semibold mb-2">{insights[idx].title}</h3>
+                            <p className="text-gray-600 text-sm">{insights[idx].description}</p>
+                        </motion.div>
+                    ))}
+                </motion.div>
                 {/* Fourth column */}
-                <div className="flex flex-col gap-6">
-                    <div className="bg-[#3d5afe] text-white rounded-3xl shadow-md p-8 flex flex-col items-center justify-center h-full min-h-[180px]">
+                <motion.div
+                    className="flex flex-col gap-6"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.3 }}
+                    variants={columnVariants}
+                >
+                    <motion.div
+                        className="bg-[#3d5afe] text-white rounded-3xl shadow-md p-8 flex flex-col items-center justify-center h-full min-h-[180px]"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false, amount: 0.3 }}
+                        variants={cardVariants}
+                        transition={{ delay: 0 * 0.15, duration: 0.6, ease: easeOut }}
+                    >
                         <span className="uppercase text-xs font-bold mb-2">Tag Results</span>
                         <h3 className="text-xl font-semibold text-center">{insights[3].title}</h3>
-                    </div>
-                    <div className="bg-[#ff5b6a] text-white rounded-3xl shadow-md p-8 flex flex-col items-center justify-center h-full min-h-[180px]">
+                    </motion.div>
+                    <motion.div
+                        className="bg-[#ff5b6a] text-white rounded-3xl shadow-md p-8 flex flex-col items-center justify-center h-full min-h-[180px]"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false, amount: 0.3 }}
+                        variants={cardVariants}
+                        transition={{ delay: 1 * 0.15, duration: 0.6, ease: easeOut }}
+                    >
                         <span className="uppercase text-xs font-bold mb-2">Tag Results</span>
                         <h3 className="text-xl font-semibold text-center">{insights[7].title}</h3>
                         <span className="text-sm mt-2">{insights[7].posts} posts</span>
-                    </div>
-                    <div className="bg-white rounded-3xl shadow-md p-4 flex flex-col h-full">
+                    </motion.div>
+                    <motion.div
+                        className="bg-white rounded-3xl shadow-md p-4 flex flex-col h-full"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false, amount: 0.3 }}
+                        variants={cardVariants}
+                        transition={{ delay: 2 * 0.15, duration: 0.6, ease: easeOut }}
+                    >
                         {insights[11].image && (
                             <Image src={insights[11].image} alt={insights[11].title} width={320} height={180} className="rounded-2xl object-cover mb-4" />
                         )}
                         <h3 className="text-black text-base font-semibold mb-2">{insights[11].title}</h3>
                         <p className="text-gray-600 text-sm">{insights[11].description}</p>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </div>
-            <button className="bg-[#3d5afe] hover:bg-[#2a3eb1] text-white font-medium px-8 py-3 rounded-full shadow transition-all text-base whitespace-nowrap mt-8">
+            <motion.button
+                className="bg-[#3d5afe] hover:bg-[#2a3eb1] text-white font-medium px-8 py-3 rounded-full shadow transition-all text-base whitespace-nowrap mt-8"
+                whileHover={{ scale: 1.07 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ type: "spring", stiffness: 300 }}
+            >
                 Subscribe to updates
-            </button>
+            </motion.button>
         </section>
     );
 };

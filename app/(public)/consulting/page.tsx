@@ -6,7 +6,7 @@ import Navbar from "@/app/components/navbar";
 const ConsultingSolutions = () => {
     return (
         <>
-            <Navbar />
+            <Navbar bgColor="bg-[#3758F9]" />
             <ConsultingHero />
             <Footer />
         </>

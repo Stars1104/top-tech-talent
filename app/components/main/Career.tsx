@@ -14,9 +14,10 @@ const Career = () => {
             <div className="w-full max-w-[1600px] h-full relative flex lg:flex-row justify-center flex-col-reverse lg:gap-0 gap-12">
                 <motion.div
                     className='lgw-1/2 w-full flex justify-center items-center relative'
-                    initial={{ x: -80, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    initial={{ x: -80, opacity: 0, scale: 0.95 }}
+                    whileInView={{ x: 0, opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
+                    viewport={{ once: true, amount: 0.4 }}
                 >
                     <Image src="/images/mtc-banner.png" alt="MTC-Banner" width={500} height={500} />
                     {/* <Image src="/images/career-effect.png" alt="Career-Effect" width={440} height={240} className="absolute top-16 right-16" /> */}
@@ -24,14 +25,24 @@ const Career = () => {
                 <motion.div
                     className="lgw-1/2 w-full flex flex-col justify-center items-center"
                     initial={{ x: 80, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+                    viewport={{ once: true, amount: 0.4 }}
                 >
-                    <h2 className="text-4xl sm:text-4xl lg:text-6xl font-thin lg:mb-20 mb-6 mt-4 text-pink-500 lg:px-0 px-4 lg:text-start text-center">Make the career move you want</h2>
+                    <motion.h2
+                        className="text-4xl sm:text-4xl lg:text-6xl font-thin lg:mb-20 mb-6 mt-4 text-pink-500 lg:px-0 px-4 lg:text-start text-center"
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
+                        viewport={{ once: true, amount: 0.6 }}
+                    >
+                        Make the career move you want
+                    </motion.h2>
                     <motion.div
                         className="w-full flex flex-col lg:gap-8 gap-4"
                         initial="hidden"
-                        animate="visible"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.4 }}
                         variants={{
                             hidden: {},
                             visible: {
@@ -41,8 +52,7 @@ const Career = () => {
                             }
                         }}
                     >
-                        {[
-                            "Get instant job recommendations tailored to your skills and goals",
+                        {["Get instant job recommendations tailored to your skills and goals",
                             "Gain exposure to a range of companies and job types: fully remote, hybrid or on-site, and contract or permanent",
                             "Access competitive pay, benefits, and free online training and development"
                         ].map((text, idx) => (
@@ -50,9 +60,10 @@ const Career = () => {
                                 key={idx}
                                 className="w-full flex justify-start items-center lg:gap-14 gap-4"
                                 variants={{
-                                    hidden: { opacity: 0, y: 30 },
-                                    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                                    hidden: { opacity: 0, y: 40 },
+                                    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } }
                                 }}
+                                transition={{ duration: 0.7, ease: 'easeOut' }}
                             >
                                 <div className="flex justify-center items-center bg-[#4747F3] p-1 rounded-full text-white">
                                     <Check />

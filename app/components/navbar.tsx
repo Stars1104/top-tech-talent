@@ -5,7 +5,11 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useRouter } from 'next/navigation';
 
-const Navbar = () => {
+interface NavbarProps {
+    bgColor?: string;
+}
+
+const Navbar = ({ bgColor }: NavbarProps) => {
     const [showSearch, setShowSearch] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isSmallHeight, setIsSmallHeight] = useState(false);
@@ -72,7 +76,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className={`w-full flex justify-center fixed top-0 left-0 z-50 py-4 tranistion-all duration-300 ${isSmallHeight ? 'bg-[#3758F9]' : 'bg-transparent backdrop-blur supports-backdrop-blur:bg-white/95'}`}>
+        <nav className={`w-full flex justify-center fixed top-0 left-0 z-50 py-4 tranistion-all duration-300 ${isSmallHeight ? 'bg-[#3758F9]' : `${bgColor} backdrop-blur supports-backdrop-blur:bg-white/95`}`}>
             <div className="w-full max-w-[1600px] flex items-center justify-between px-4 md:px-8 h-14 md:h-28relative">
                 {/* Logo as Text */}
                 <Link href="/">

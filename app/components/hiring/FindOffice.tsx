@@ -1,12 +1,19 @@
 import { MapPin } from "lucide-react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const FindOffice = () => {
     return (
         <section className="w-full flex flex-col md:flex-row items-center justify-center py-16 md:py-24 px-4 md:px-12 bg-white">
             <div className="w-full max-w-[1200px] flex justify-between items-center md:flex-row flex-col-reverse">
                 {/* Left: Text and Search */}
-                <div className="flex flex-col items-start justify-center max-w-xl z-10">
+                <motion.div
+                    className="flex flex-col items-start justify-center max-w-xl z-10"
+                    initial={{ opacity: 0, x: -60 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
                     <h1 className="text-pink-500 text-3xl sm:text-4xl md:text-5xl font-thin mb-6">
                         Find an office near you
                     </h1>
@@ -23,12 +30,15 @@ const FindOffice = () => {
                                 className="bg-transparent outline-none w-full text-gray-700 text-base placeholder-gray-500"
                             />
                         </div>
-                        <button
+                        <motion.button
                             type="submit"
                             className="bg-[#3d5afe] hover:bg-[#2a3eb1] text-white font-medium px-8 py-3 rounded-full shadow transition-all text-base whitespace-nowrap"
+                            whileHover={{ scale: 1.06 }}
+                            whileTap={{ scale: 0.98 }}
+                            transition={{ type: "spring", stiffness: 300 }}
                         >
                             Search
-                        </button>
+                        </motion.button>
                     </form>
                     <div className="text-black text-base mt-2">
                         Or contact us by phone{' '}
@@ -36,9 +46,15 @@ const FindOffice = () => {
                             1.855.432.0924
                         </a>
                     </div>
-                </div>
+                </motion.div>
                 {/* Right: Image and Shapes */}
-                <div className="flex items-center justify-center relative mt-12 md:mt-0 md:ml-8">
+                <motion.div
+                    className="flex items-center justify-center relative mt-12 md:mt-0 md:ml-8"
+                    initial={{ opacity: 0, x: 60 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                >
                     <Image
                         src="/images/office-finder-banner.png"
                         alt="Person using AR technology"
@@ -47,7 +63,7 @@ const FindOffice = () => {
                         className="object-cover w-full h-full"
                         priority
                     />
-                </div>
+                </motion.div>
             </div>
         </section>
     );
