@@ -1,5 +1,5 @@
 "use client";
-import MainPage from "./pages/Mainpage";
+import MainPage from "./(public)/Mainpage";
 import Navbar from "./components/navbar";
 import Footer from "./components/Footer";
 

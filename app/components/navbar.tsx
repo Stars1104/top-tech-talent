@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ChevronDown, Search, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
     const [showSearch, setShowSearch] = useState(false);
@@ -12,7 +12,7 @@ const Navbar = () => {
     const searchInputRef = useRef<HTMLInputElement>(null);
     const searchButtonRef = useRef<HTMLButtonElement>(null);
     const searchBoxRef = useRef<HTMLDivElement>(null);
-    const route = useRouter();
+    const router = useRouter();
 
     // Focus the input when shown
     useEffect(() => {
@@ -60,15 +60,14 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const pageRouter = (router: string) => {
-        if (router === "find-jobs") {
+    const pageRouter = (route: string) => {
+        if (route === "find-jobs") {
 
-        } else if (router === "hiring-talent") {
-            route.push('/hiringpage');
-        } else if (router === "explore-consulting-solutions") {
+        } else if (route === "hiring-talent") {
+            router.push('/hiring');
+        } else if (route === "explore-consulting-solutions") {
 
-        } else if (router === "discover-insights") {
-
+        } else if (route === "discover-insights") {
         }
     }
 
