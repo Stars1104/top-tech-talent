@@ -5,6 +5,7 @@ import Scalable from "@/app/components/consulting/Scalable";
 import Footer from "@/app/components/Footer";
 import Navbar from "@/app/components/navbar";
 import BusinessChallengeForm from "@/app/components/consulting/businessChallenge";
+import Strategy from "@/app/components/consulting/Strategy";
 
 const ConsultingSolutions = () => {
     return (
@@ -14,6 +15,7 @@ const ConsultingSolutions = () => {
             <Scalable />
             <AreasExpertise />
             <BusinessChallengeForm />
+            <Strategy />
             <Footer />
         </>
     )
