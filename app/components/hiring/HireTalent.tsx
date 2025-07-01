@@ -27,7 +27,11 @@ const slides = [
     // Add more slides as needed
 ];
 
-const HireTalent = () => {
+interface HireTalentProps {
+    title?: string
+}
+
+const HireTalent = ({ title }: HireTalentProps) => {
     return (
         <motion.section
             initial={{ opacity: 0, y: 40 }}
@@ -43,7 +47,7 @@ const HireTalent = () => {
                 transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
                 className="text-pink-500 text-4xl md:text-5xl font-light text-center mb-12 mt-4"
             >
-                Hire the talent you need
+                {title}
             </motion.h2>
             <div className="w-full max-w-5xl px-2 md:px-0 relative">
                 <Swiper

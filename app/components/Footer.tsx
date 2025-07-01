@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const Footer = () => {
     return (
-        <footer className="mt-24">
+        <footer>
             {/* Bottom Section: Blue navigation/footer */}
             <motion.div
                 initial={{ opacity: 0, y: 40 }}

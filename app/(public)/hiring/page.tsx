@@ -20,7 +20,7 @@ const HiringPage = () => {
             <BookConsultion />
             <Organization />
             <ConsultingExpertise />
-            <HireTalent />
+            <HireTalent title="Hire the talent you need" />
             <TalentInsight />
             <Footer />
         </>

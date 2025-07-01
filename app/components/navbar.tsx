@@ -72,6 +72,7 @@ const Navbar = ({ bgColor }: NavbarProps) => {
         } else if (route === "explore-consulting-solutions") {
             router.push('/consulting');
         } else if (route === "discover-insights") {
+            router.push('/insights');
         }
     }
 

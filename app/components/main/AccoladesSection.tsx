@@ -29,7 +29,7 @@ export default function AccoladesSection() {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="w-full flex flex-col bg-no-repeat bg-[95%_center] lg:bg-center bg-cover relative md:justify-start items-center justify-start px-2 sm:px-4"
         >
-            <div className='w-full max-w-[1400px] flex flex-col gap-4 justify-center items-center'>
+            <div className='w-full max-w-[1400px] flex flex-col gap-4 justify-center items-center pb-24'>
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
