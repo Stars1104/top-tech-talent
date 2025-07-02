@@ -24,7 +24,6 @@ const Organization = () => {
                             <span
                                 key={cat}
                                 className={`text-base sm:text-lg md:text-2xl text-black cursor-pointer font-semibold relative px-2 py-2 sm:py-4`}
-                                style={{ textShadow: '2px 2px 4px #ffb6e6' }}
                                 onClick={() => setSelected(idx)}
                             >
                                 {cat}
@@ -78,7 +77,7 @@ const Organization = () => {
                                     "Accounts payable/receivable specialist",
                                     "Senior financial analyst",
                                     "Bookkeeper"
-                                ].map((title, i) => (
+                                ].map((title) => (
                                     <motion.span
                                         key={title}
                                         className="text-[#00a2d4] underline text-base sm:text-xl md:text-3xl cursor-pointer"
