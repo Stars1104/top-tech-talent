@@ -81,7 +81,7 @@ const Navbar = ({ bgColor }: NavbarProps) => {
             <div className="w-full max-w-[1600px] flex items-center justify-between px-4 md:px-8 h-14 md:h-28relative">
                 {/* Logo as Text */}
                 <Link href="/">
-                    <Image src="/Logo.png" alt="Logo" width="70" height="30" className="md:w-[85px] w-[80px] cursor-pointer" />
+                    <Image src="/Logo.png" alt="Logo" width="70" height="30" className="md:w-[95px] w-[70px] cursor-pointer" />
                 </Link>
                 {/* Desktop Menu Items */}
                 <div className="hidden lg:flex gap-8 items-center text-white font-medium">

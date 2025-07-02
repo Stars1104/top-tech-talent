@@ -15,7 +15,7 @@ const Organization = () => {
     const mainRef = useRef(null);
     const inView = useInView(mainRef, { amount: 0.2 });
     return (
-        <div className="w-full min-h-[900px] h-auto flex flex-col bg-no-repeat bg-[95%_center] mt-8 sm:mt-12 lg:bg-center bg-cover relative md:justify-start items-center justify-start px-2 sm:px-4 overflow-x-hidden">
+        <div className="w-full min-h-[900px] h-full flex flex-col bg-no-repeat bg-[95%_center] mt-8 sm:mt-12 lg:bg-center bg-cover relative md:justify-start items-center justify-start px-2 sm:px-4 overflow-x-hidden">
             <div ref={mainRef} className="w-full max-w-[1700px] relative bg-[#d4dbff] h-full items-center justify-start rounded-2xl md:rounded-[130px] flex flex-col p-4 sm:p-8 md:p-12 lg:p-16">
                 <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-6xl font-thin text-center lg:mb-12 mb-4 sm:mb-6 mt-4 text-pink-500 lg:px-0 px-2 sm:px-4">Add specialized talent across your organization</h2>
                 <div className="w-full flex flex-col">

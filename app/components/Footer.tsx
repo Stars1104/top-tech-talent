@@ -78,7 +78,7 @@ const Footer = () => {
                 <div className="container mx-auto px-4 py-8 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
                     {/* Left: Logo and Socials */}
                     <div className="flex flex-col items-start gap-4">
-                        <Image src="/Footer-Logo.png" alt="Toptech Talent Logo" width={120} height={60} />
+                        <Image src="/Footer-Logo.png" alt="Toptech Talent Logo" width={120} height={60} className='w-[80px] h-[60px]' />
                         <div className="flex gap-4 mt-2">
                             <a href="#" aria-label="Facebook" className="text-white p-2 rounded-full text-2xl hover:opacity-70 bg-[#4747F3]"><FaFacebookF /></a>
                             <a href="#" aria-label="X" className="text-white p-2 rounded-full text-2xl hover:opacity-70 bg-[#4747F3]"><FaTwitter /></a>
