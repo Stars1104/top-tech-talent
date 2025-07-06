@@ -1,4 +1,3 @@
-'use client'
 import Link from "next/link";
 import { ChevronDown, Search, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -66,7 +65,7 @@ const Navbar = ({ bgColor }: NavbarProps) => {
 
     const pageRouter = (route: string) => {
         if (route === "find-jobs") {
-
+            router.push('/findjob');
         } else if (route === "hiring-talent") {
             router.push('/hiring');
         } else if (route === "explore-consulting-solutions") {
