@@ -234,7 +234,7 @@ const TalentInsight = () => {
                 </motion.div>
             </div>
             <motion.button
-                className="bg-[#3d5afe] hover:bg-[#2a3eb1] text-white font-medium px-8 py-3 rounded-full shadow transition-all text-base whitespace-nowrap mt-8"
+                className="bg-[#3d5afe] hover:bg-[#2a3eb1] text-white font-medium px-8 py-3 rounded-full shadow transition-all text-base whitespace-nowrap mt-8 cursor-pointer"
                 whileHover={{ scale: 1.07 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: "spring", stiffness: 300 }}

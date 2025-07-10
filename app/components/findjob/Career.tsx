@@ -58,7 +58,7 @@ const JobCareer: React.FC = () => {
         {features.map((feature, idx) => (
           <motion.div
             key={feature.title}
-            className="flex-1 max-w-sm mx-auto text-center"
+            className="flex-1 max-w-sm mx-auto text-center border p-6 rounded-2xl border-gray-200"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ 
@@ -66,18 +66,9 @@ const JobCareer: React.FC = () => {
               ease: "easeOut",
               delay: 0.2 + (idx * 0.2) // Staggered animation
             }}
-            whileHover={{ 
-              y: -10,
-              transition: { duration: 0.3, ease: "easeOut" }
-            }}
           >
             <motion.div 
               className="w-16 h-16 flex items-center justify-center bg-gray-100 rounded-2xl shadow-md mb-6 mx-auto"
-              whileHover={{ 
-                scale: 1.1,
-                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                transition: { duration: 0.3, ease: "easeOut" }
-              }}
             >
               {feature.icon}
             </motion.div>

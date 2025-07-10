@@ -43,24 +43,24 @@ const BusinessImpact = () => {
                     >
                         Consulting solutions to drive business impact
                     </motion.h2>
-                    <motion.div className="w-full flex flex-col justify-center items-center md:gap-30 gap-12 md:pl-16 md:pt-24 pt-12 md:px-0 px-4" variants={containerVariants}>
+                    <motion.div className="w-full flex flex-col justify-center items-center md:gap-14 gap-12 md:pl-16 md:pt-24 pt-12 md:px-0 px-4" variants={containerVariants}>
                         <motion.div className="w-full flex justify-start items-center gap-8" variants={itemVariants}>
                             <div className="flex justify-center items-center bg-[#4747F3] p-1 rounded-full text-white">
                                 <Check />
                             </div>
-                            <span className="text-black text-2xl text-center">Develop a clear vision and strategy</span>
-                        </motion.div>
-                        <motion.div className="w-full flex justify-start items-center gap-2" variants={itemVariants}>
-                            <div className="flex justify-center items-center bg-[#4747F3] p-1 rounded-full text-white">
-                                <Check />
-                            </div>
-                            <span className="text-black text-2xl text-center">Enhance business performance with critical technologies and processes</span>
+                            <span className="text-black text-2xl text-start">Develop a clear vision and strategy</span>
                         </motion.div>
                         <motion.div className="w-full flex justify-start items-center gap-8" variants={itemVariants}>
                             <div className="flex justify-center items-center bg-[#4747F3] p-1 rounded-full text-white">
                                 <Check />
                             </div>
-                            <span className="text-black text-2xl text-center">Implement a plan or manage operations</span>
+                            <span className="text-black text-2xl text-start">Enhance business performance with critical technologies and processes</span>
+                        </motion.div>
+                        <motion.div className="w-full flex justify-start items-center gap-8" variants={itemVariants}>
+                            <div className="flex justify-center items-center bg-[#4747F3] p-1 rounded-full text-white">
+                                <Check />
+                            </div>
+                            <span className="text-black text-2xl text-start">Implement a plan or manage operations</span>
                         </motion.div>
                         <motion.div className="w-full flex justify-start items-center md:gap-20 gap-8 mt-16 md:flex-row flex-col" variants={itemVariants}>
                             <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }} className="md:w-64 w-full px-6 h-22 rounded-3xl cursor-pointer text-lg font-medium bg-[#4747F3] text-white">Find your consulting solution</motion.button>

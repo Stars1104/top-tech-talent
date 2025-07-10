@@ -115,7 +115,7 @@ export default function NextJob() {
           </motion.div>
           <motion.button
             type="submit"
-            className="mt-4 px-10 py-4 rounded-full bg-[#3758F9] text-white text-lg font-semibold shadow-lg transition-all"
+            className="mt-4 px-10 py-4 rounded-full bg-[#3758F9] text-white text-lg font-semibold shadow-lg transition-all cursor-pointer"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 1.2 }}

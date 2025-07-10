@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { motion, easeOut } from 'framer-motion';
+import { Check } from 'lucide-react';
 
 const FindJobHero = () => {
     const containerVariants = {
@@ -76,13 +77,13 @@ const FindJobHero = () => {
                         Find a job that works for you
                     </motion.h1>
                     <motion.p 
-                        className="text-lg md:text-xl text-gray-700 mb-8 font-normal"
+                        className="text-lg md:text-xl text-gray-700 mb-4 font-normal"
                         variants={itemVariants}
                     >
                         At Robert Half, we specialize in Finance and Accounting, Administrative and Customer Support, Technology, Marketing and Creative, and Legal.
                     </motion.p>
                     <motion.ul 
-                        className="space-y-4 mb-10"
+                        className="mb-6"
                         variants={itemVariants}
                     >
                         {[
@@ -92,22 +93,19 @@ const FindJobHero = () => {
                         ].map((text, idx) => (
                             <motion.li 
                                 key={idx} 
-                                className="flex items-start gap-3 px-4 py-3"
+                                className="flex items-start gap-3 py-3"
                                 variants={itemVariants}
                                 custom={idx}
                             >
-                                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full shadow-sm">
-                                    <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
-                                        <circle cx="10" cy="10" r="10" fill="#fff" />
-                                        <path d="M6 10.5l2.5 2.5 5-5" stroke="#E11D48" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
+                                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full">
+                                    <Check className='text-[#E11D48]'/>
                                 </span>
                                 <span className="text-base md:text-lg text-gray-800">{text}</span>
                             </motion.li>
                         ))}
                     </motion.ul>
                     <motion.button 
-                        className="mt-2 px-8 py-4 bg-[#3758F9] text-white text-lg font-semibold rounded-full shadow-md transition"
+                        className="mt-2 px-8 py-4 bg-[#3758F9] text-white text-lg font-semibold rounded-full shadow-md transition cursor-pointer"
                         variants={buttonVariants}
                         whileHover="hover"
                     >

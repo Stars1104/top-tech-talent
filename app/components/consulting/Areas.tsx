@@ -59,7 +59,7 @@ const AreasExpertise = () => {
                                 transition={{ duration: 0.5 }}
                                 className="w-full flex flex-col gap-1 sm:gap-2"
                             >
-                                <span className="text-base sm:text-lg md:text-2xl lg:text-4xl">Leverage our comprehensive approach to technology that includes software selection and implementation, automation, modernization and end-to-end transformation journeys.</span>
+                                <span className="text-base sm:text-lg md:text-2xl lg:text-3xl">Leverage our comprehensive approach to technology that includes software selection and implementation, automation, modernization and end-to-end transformation journeys.</span>
                             </motion.div>
                         </AnimatePresence>
                         <div className="w-[70%] flex flex-col gap-4 sm:gap-8 px-2 sm:px-4 mt-4">

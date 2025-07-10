@@ -68,7 +68,7 @@ const Career = () => {
                                 <div className="flex justify-center items-center bg-[#4747F3] p-1 rounded-full text-white">
                                     <Check />
                                 </div>
-                                <span className="text-black lg:text-2xl text-lg text-center">{text}</span>
+                                <span className="text-black lg:text-2xl text-lg text-start">{text}</span>
                             </motion.div>
                         ))}
                     </motion.div>

@@ -43,7 +43,7 @@ const FindYourNextHire = () => {
                         <Image src="/images/fynh-banner.png" alt="banner" width={550} height={550} />
                     </motion.div>
                 </div>
-                <div className="lg:w-1/2 w-full lg:h-full lg:pt-44 pt-8 flex flex-col justify-start items-center">
+                <div className="lg:w-1/2 w-full lg:h-full lg:pt-56 pt-8 flex flex-col justify-start items-center">
                     <motion.h2
                         className="text-4xl lg:text-6xl font-thin text-center lg:mb-12 mb-6 mt-4 text-pink-500 lg:px-0 px-4"
                         initial={{ opacity: 0, y: 30 }}
@@ -54,7 +54,7 @@ const FindYourNextHire = () => {
                         Find Your Next Hire
                     </motion.h2>
                     <motion.div
-                        className="w-full flex flex-col justify-center items-center gap-24"
+                        className="w-full flex flex-col justify-center items-center gap-12"
                         variants={containerVariants}
                         initial="hidden"
                         whileInView="visible"
@@ -64,19 +64,19 @@ const FindYourNextHire = () => {
                             <div className="flex justify-center items-center bg-[#4747F3] p-1 rounded-full text-white">
                                 <Check />
                             </div>
-                            <span className="text-white text-2xl text-center">Preview recruiter-assessed and AI-matched candidates</span>
-                        </motion.div>
-                        <motion.div className="w-full flex justify-start items-center gap-4" variants={itemVariants}>
-                            <div className="flex justify-center items-center bg-[#4747F3] p-1 rounded-full text-white">
-                                <Check />
-                            </div>
-                            <span className="text-white text-2xl text-center">Book a consultation with one of  our recruiters to discuss your hiring needs</span>
+                            <span className="text-white text-2xl text-start">Preview recruiter-assessed and AI-matched candidates</span>
                         </motion.div>
                         <motion.div className="w-full flex justify-start items-center gap-8" variants={itemVariants}>
                             <div className="flex justify-center items-center bg-[#4747F3] p-1 rounded-full text-white">
                                 <Check />
                             </div>
-                            <span className="text-white text-2xl text-center">Get dedicated expert support at every step of the way</span>
+                            <span className="text-white text-2xl text-start">Book a consultation with one of  our recruiters to discuss your hiring needs</span>
+                        </motion.div>
+                        <motion.div className="w-full flex justify-start items-center gap-8" variants={itemVariants}>
+                            <div className="flex justify-center items-center bg-[#4747F3] p-1 rounded-full text-white">
+                                <Check />
+                            </div>
+                            <span className="text-white text-2xl text-start">Get dedicated expert support at every step of the way</span>
                         </motion.div>
                     </motion.div>
                 </div>

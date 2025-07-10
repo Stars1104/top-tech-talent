@@ -55,9 +55,9 @@ const Organization = () => {
                                 transition={{ duration: 0.5 }}
                                 className="w-full flex flex-col gap-1 sm:gap-2"
                             >
-                                <span className="text-base sm:text-lg md:text-2xl lg:text-4xl">From accountants to CFOs, we'll bring you top candidates with</span>
-                                <span className="text-base sm:text-lg md:text-2xl lg:text-4xl">in-demand skills and experience and help manage the hiring</span>
-                                <span className="text-base sm:text-lg md:text-2xl lg:text-4xl">process for you.</span>
+                                <span className="text-base sm:text-lg md:text-2xl lg:text-3xl">From accountants to CFOs, we'll bring you top candidates with</span>
+                                <span className="text-base sm:text-lg md:text-2xl lg:text-3xl">in-demand skills and experience and help manage the hiring</span>
+                                <span className="text-base sm:text-lg md:text-2xl lg:text-3xl">process for you.</span>
                             </motion.div>
                         </AnimatePresence>
                         <div className="w-full flex flex-col gap-4 sm:gap-8 px-2 sm:px-4 mt-4">
